@@ -2,4 +2,9 @@
 .vscode/
 .workbuddy/
 __pycache__/
+
+.venv/
+
+reports/
 allure-results/
+allure-report/
