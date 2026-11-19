@@ -1,6 +1,7 @@
 # flake8: noqa
 import allure
 import pytest
+import random
 
 @allure.feature("随机模块")
 class TestRandom:
