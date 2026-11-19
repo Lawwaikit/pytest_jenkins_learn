@@ -65,7 +65,7 @@ pipeline {
             steps {
                 checkout([
                     $class: 'GitSCM',
-                    branches: [[name: 'main']], // 也可以是具体的 tag 或 SHA
+                    branches: [[name: 'random']], // 也可以是具体的 tag 或 SHA
                     userRemoteConfigs: [[
                         url: env.GIT_URL,
                     ]]
