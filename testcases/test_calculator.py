@@ -4,7 +4,8 @@ import allure
 from app.calculator import add, sub
 import pytest
 
-@allure.feature("计算模块")
+@allure.epic("计算模块")
+@allure.feature("加减模块")
 class TestCalculator:
     """计算器模块的测试用例"""
 
@@ -24,8 +25,6 @@ class TestCalculator:
     测试步骤：
     预期结果：
     """)
-    @allure.epic("epic 加法")
-    @allure.feature("feature 加法")
     @allure.story("story 加法")
     def test_add(self, a, b, expected):
         allure.dynamic.title(f"{a}+{b}={expected}")
@@ -46,8 +45,6 @@ class TestCalculator:
     测试步骤：
     预期结果：
     """)
-    @allure.epic("epic 减法")
-    @allure.feature("feature 减法")
     @allure.story("story 减法")
     def test_sub(self, a, b, expected):
         """测试减法功能"""
