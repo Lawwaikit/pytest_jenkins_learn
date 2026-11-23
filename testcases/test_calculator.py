@@ -17,8 +17,18 @@ class TestCalculator:
         (100, 200, 300),
     ])
     @pytest.mark.smoke
-    @allure.story("加法模块")
+    @allure.title("title 加法")
+    @allure.description("""description 加法
+    验证加法功能是否正常
+    前置条件：
+    测试步骤：
+    预期结果：
+    """)
+    @allure.epic("epic 加法")
+    @allure.feature("feature 加法")
+    @allure.story("story 加法")
     def test_add(self, a, b, expected):
+        allure.dynamic.title(f"{a}+{b}={expected}")
         """测试加法功能"""
         assert add(a, b) == expected
 
@@ -29,7 +39,17 @@ class TestCalculator:
         (-1, -1, 0),
         (100, 50, 50),
     ])
-    @allure.story("减法模块")
+    @allure.title("title 减法")
+    @allure.description("""description 减法
+    验证减法功能是否正常
+    前置条件：
+    测试步骤：
+    预期结果：
+    """)
+    @allure.epic("epic 减法")
+    @allure.feature("feature 减法")
+    @allure.story("story 减法")
     def test_sub(self, a, b, expected):
         """测试减法功能"""
+        allure.dynamic.title(f"{a}-{b}={expected}")
         assert sub(a, b) == expected

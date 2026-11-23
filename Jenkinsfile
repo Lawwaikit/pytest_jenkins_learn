@@ -103,7 +103,7 @@ pipeline {
             steps {
                 catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                     script {
-                        def testCommand = 'pytest -v '
+                        def testCommand = 'pytest -v --tb=no '
                         if (params.TEST_SCOPE == 'smoke') {
                             testCommand += ' -m smoke'
                         }
@@ -112,6 +112,11 @@ pipeline {
                         sh testCommand
                     }
                 }
+            }
+        }
+        stage('后续stage') {
+            steps {
+                echo "后续步骤"
             }
         }
     }
