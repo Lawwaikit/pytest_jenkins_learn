@@ -1,0 +1,16 @@
+{
+  "generated_by": "tools/gen_api_from_swagger.py",
+  "api_title": "FinTrade Simulator",
+  "api_version": "1.0.0",
+  "openapi_version": "3.1.0",
+  "spec_sha256": "3598e67b8580327a15995b59a04247708da3bc88175235ba74a89ec14a8cf020",
+  "tag_classes": {
+    "运维探针": "OpsAPI",
+    "连通性探测": "ProbeAPI",
+    "认证": "AuthAPI",
+    "用户管理": "UserAPI",
+    "钱包管理": "WalletAPI",
+    "交易": "TradeAPI"
+  },
+  "operation_count": 23
+}
