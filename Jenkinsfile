@@ -24,6 +24,11 @@ pipeline {
             choices: ['all', 'smoke'],
             description: '选择测试范围'
         )
+        text(
+            name: 'BRANCH_NAME',
+            defaultValue: 'trade_main',
+            description: '测试分支'
+        )
     }
 
     stages {
@@ -34,7 +39,6 @@ pipeline {
                 sh '''
                     rm -rf allure-results/* reports/*
                 '''
-                
             }
         }
         stage('查看构建信息'){
@@ -65,10 +69,11 @@ pipeline {
             steps {
                 checkout([
                     $class: 'GitSCM',
-                    branches: [[name: 'random']], // 也可以是具体的 tag 或 SHA
+                    branches: [[name: params.BRANCH_NAME]], // 也可以是具体的 tag 或 SHA
                     userRemoteConfigs: [[
                         url: env.GIT_URL,
-                    ]]
+                    ]],
+                    extensions: [[$class: 'CleanBeforeCheckout']]  // 关键：拉取前清理
                 ])
                 script{
                     echo env.GIT_BRANCH
